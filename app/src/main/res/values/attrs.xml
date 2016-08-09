@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PagerIndicator">
+        <attr name="indicatorSize" format="dimension"/>
+        <attr name="indicatorNormalColor" format="color"/>
+        <attr name="indicatorActiveColor" format="color"/>
+        <attr name="indicatorPadding" format="dimension"/>
+        <attr name="defaultSelected" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="BannerView">
+        <attr name="customIndicator" format="boolean"/>
+        <attr name="indicatorHeight" format="dimension"/>
+    </declare-styleable>
+</resources>
