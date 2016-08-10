@@ -3,7 +3,10 @@ banner 轮播图，实现自动轮播，indicator 指示
 
 #使用示例:
 继承BannerView,实现 getItemView 方法
-`public class DemoBannerView extends BannerView<DemoBannerView.Item> {
+
+code:
+
+	public class DemoBannerView extends BannerView<DemoBannerView.Item> {
 
     private Context mCxt;
 
@@ -38,5 +41,6 @@ banner 轮播图，实现自动轮播，indicator 指示
         public int resId;
         public String name;
     }
-}
-`
+	}
+
+	
