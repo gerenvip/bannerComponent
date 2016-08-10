@@ -15,10 +15,6 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-/**
- * @author wangwei on 16/8/9
- *         wangwei@jiandaola.com
- */
 public abstract class BannerView<T> extends FrameLayout implements Runnable {
 
     private ViewPager mViewPager;
@@ -198,7 +194,6 @@ public abstract class BannerView<T> extends FrameLayout implements Runnable {
     }
 
     protected void onPageSelected(int position) {
-
     }
 
     public abstract View getItemView(LayoutInflater inflater, T data, int dataPosition);

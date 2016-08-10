@@ -7,10 +7,6 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
-/**
- * @author wangwei on 16/8/9
- *         wangwei@jiandaola.com
- */
 public abstract class BaseBannerAdapter<T> extends PagerAdapter implements ViewPager.OnPageChangeListener {
 
     public int mMaxBannerSize = 0;

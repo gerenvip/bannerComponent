@@ -7,10 +7,6 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 
-/**
- * @author wangwei on 16/8/9
- *         wangwei@jiandaola.com
- */
 public class PagerIndicator extends View {
 
     private int mIndicatorSize;

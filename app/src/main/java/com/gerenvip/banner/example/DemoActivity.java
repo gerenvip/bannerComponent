@@ -9,10 +9,6 @@ import com.gerenvip.banner.R;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author wangwei on 16/8/9
- *         wangwei@jiandaola.com
- */
 public class DemoActivity extends AppCompatActivity {
 
     private DemoBannerView mBannerView;

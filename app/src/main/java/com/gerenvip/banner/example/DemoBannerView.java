@@ -11,10 +11,6 @@ import android.widget.Toast;
 import com.gerenvip.banner.BannerView;
 import com.gerenvip.banner.R;
 
-/**
- * @author wangwei on 16/8/9
- *         wangwei@jiandaola.com
- */
 public class DemoBannerView extends BannerView<DemoBannerView.Item> {
 
     private Context mCxt;
