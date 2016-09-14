@@ -5,6 +5,7 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.HashMap;
 import java.util.List;
 
 public abstract class BaseBannerAdapter<T> extends PagerAdapter implements ViewPager.OnPageChangeListener {
@@ -15,6 +16,7 @@ public abstract class BaseBannerAdapter<T> extends PagerAdapter implements ViewP
     private int mCurrentIndex = 0;
 
     private List<T> mDatas;
+    private HashMap<Integer, View> mCacheViews = new HashMap<>();
 
     public BaseBannerAdapter(ViewPager pager) {
         mViewPager = pager;
@@ -39,6 +41,7 @@ public abstract class BaseBannerAdapter<T> extends PagerAdapter implements ViewP
     @Override
     public final void notifyDataSetChanged() {
         calculateMaxBannerSize();
+        mCacheViews.clear();
         super.notifyDataSetChanged();
     }
 
@@ -57,16 +60,22 @@ public abstract class BaseBannerAdapter<T> extends PagerAdapter implements ViewP
 
     @Override
     public boolean isViewFromObject(View view, Object object) {
+        LogUtil.d("BannerView", "isViewFromObject:view=" + view + "; object=" + object);
         return view == object;
     }
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
+        LogUtil.d("BannerView", "instantiateItem position=" + position);
         int dataPosition = getDataPosition(position);
         T data = mDatas.get(dataPosition);
-        View itemView = createBannerItemView(data, dataPosition, position);
-        container.addView(itemView);
-        return itemView;
+        View view = mCacheViews.get(dataPosition);
+        if (view == null) {
+            view = createBannerItemView(data, dataPosition, position);
+            mCacheViews.put(dataPosition, view);
+        }
+        container.addView(view);
+        return view;
     }
 
     @Override
@@ -77,12 +86,15 @@ public abstract class BaseBannerAdapter<T> extends PagerAdapter implements ViewP
     @Override
     public void finishUpdate(ViewGroup container) {
         int position = mViewPager.getCurrentItem();
+        LogUtil.d("BannerView", "finishUpdate current position=" + position);
         if (position == 0) {
             position = getDataSize();
             mViewPager.setCurrentItem(position, false);
+            LogUtil.d("BannerView", "finishUpdate1 position=" + position);
         } else if (position == mMaxBannerSize - 1) {
             position = getDataSize() - 1;
             mViewPager.setCurrentItem(position, false);
+            LogUtil.d("BannerView", "finishUpdate2 position=" + position);
         }
     }
 

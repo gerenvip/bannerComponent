@@ -44,6 +44,7 @@ public abstract class BannerView<T> extends FrameLayout implements Runnable {
     private boolean mHideIndicator;
     private int mIndicatorHeight;
     private boolean mTimerCancel;
+    private boolean mEnableScroll = true;
 
     public BannerView(Context context) {
         super(context);
@@ -82,9 +83,20 @@ public abstract class BannerView<T> extends FrameLayout implements Runnable {
         mBannerPeriod = time;
     }
 
+    public void enableScroll(boolean enableScroll) {
+        mEnableScroll = enableScroll;
+    }
+
     public void setData(List<T> list) {
         mBannerAdapter.setData(list);
         mIndicator.setCount(list.size());
+        scheduleScroll();
+    }
+
+    private void scheduleScroll() {
+        if (!mEnableScroll) {
+            return;
+        }
         mTimer.schedule(mTimerTask, mBannerInterval, mBannerPeriod);
     }
 
@@ -161,7 +173,7 @@ public abstract class BannerView<T> extends FrameLayout implements Runnable {
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         if (mTimer != null && mTimerCancel) {
-            mTimer.schedule(mTimerTask, mBannerInterval, mBannerPeriod);
+            scheduleScroll();
         }
     }
 
