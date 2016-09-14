@@ -73,6 +73,8 @@ public abstract class BaseBannerAdapter<T> extends PagerAdapter implements ViewP
         if (view == null) {
             view = createBannerItemView(data, dataPosition, position);
             mCacheViews.put(dataPosition, view);
+        } else {
+            updateView(view, data, dataPosition);
         }
         container.addView(view);
         return view;
@@ -99,6 +101,8 @@ public abstract class BaseBannerAdapter<T> extends PagerAdapter implements ViewP
     }
 
     public abstract View createBannerItemView(T data, int dataPosition, int position);
+
+    public abstract void updateView(View view, T data, int dataPosition);
 
     private int getDataPosition(int position) {
         if (getDataSize() == 0) {

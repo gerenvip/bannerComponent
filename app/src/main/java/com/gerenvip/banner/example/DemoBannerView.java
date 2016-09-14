@@ -50,6 +50,11 @@ public class DemoBannerView extends BannerView<DemoBannerView.Item> {
         return view;
     }
 
+    @Override
+    public void updateView(View view, Item data, int dataPosition) {
+        super.updateView(view, data, dataPosition);
+    }
+
     public static class Item {
         public int resId;
         public String name;

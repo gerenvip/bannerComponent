@@ -199,6 +199,11 @@ public abstract class BannerView<T> extends FrameLayout implements Runnable {
         }
 
         @Override
+        public void updateView(View view, T data, int dataPosition) {
+            BannerView.this.updateView(view, data, dataPosition);
+        }
+
+        @Override
         protected void onPageSelectedInternal(int dataPosition) {
             BannerView.this.onPageSelected(dataPosition);
             mIndicator.setActiveIndex(dataPosition);
@@ -209,4 +214,7 @@ public abstract class BannerView<T> extends FrameLayout implements Runnable {
     }
 
     public abstract View getItemView(LayoutInflater inflater, T data, int dataPosition);
+
+    public void updateView(View view, T data, int dataPosition) {
+    }
 }
