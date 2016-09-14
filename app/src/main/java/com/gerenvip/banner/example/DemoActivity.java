@@ -27,22 +27,22 @@ public class DemoActivity extends AppCompatActivity {
         ArrayList<DemoBannerView.Item> list = new ArrayList<>();
         DemoBannerView.Item item = new DemoBannerView.Item();
         item.resId = R.mipmap.img1;
-        item.name = "name-1";
+        item.name = "name-0";
         list.add(item);
 
         item = new DemoBannerView.Item();
         item.resId = R.mipmap.img2;
-        item.name = "name-2";
+        item.name = "name-1";
         list.add(item);
 
         item = new DemoBannerView.Item();
         item.resId = R.mipmap.img3;
-        item.name = "name-3";
+        item.name = "name-2";
         list.add(item);
 
         item = new DemoBannerView.Item();
         item.resId = R.mipmap.img4;
-        item.name = "name-4";
+        item.name = "name-3";
         list.add(item);
         return list;
     }
