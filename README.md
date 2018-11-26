@@ -23,7 +23,7 @@ allprojects {
 In app module Add the following dependency
 
 ```groovy
-implementation 'com.github.gerenvip:banner:1.0.1'
+implementation 'com.github.gerenvip:bannerComponent:1.0.1'
 ```
 # 使用示例:  
 
