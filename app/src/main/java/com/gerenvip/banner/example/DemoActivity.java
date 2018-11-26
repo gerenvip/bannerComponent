@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
+import com.ToxicBakery.viewpager.transforms.CubeInTransformer;
 import com.gerenvip.banner.R;
 
 import java.util.ArrayList;
@@ -19,6 +20,8 @@ public class DemoActivity extends AppCompatActivity {
         setContentView(R.layout.demo);
         mBannerView = (DemoBannerView) findViewById(R.id.banner_view);
         mBannerView.enableScroll(true);
+        mBannerView.setBannerInterval(3000l);
+        mBannerView.getViewPager().setPageTransformer(false, new CubeInTransformer());
 
         List<DemoBannerView.Item> list = createList();
         mBannerView.setData(list);

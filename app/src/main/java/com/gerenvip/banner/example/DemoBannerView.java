@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.gerenvip.banner.BannerView;
+import com.gerenvip.banner.LogUtil;
 import com.gerenvip.banner.R;
 
 public class DemoBannerView extends BannerView<DemoBannerView.Item> {
@@ -53,6 +54,12 @@ public class DemoBannerView extends BannerView<DemoBannerView.Item> {
     @Override
     public void updateView(View view, Item data, int dataPosition) {
         super.updateView(view, data, dataPosition);
+    }
+
+    @Override
+    protected void onPageSelected(int position) {
+        super.onPageSelected(position);
+        LogUtil.d("WW", "onPageSelected = " + position);
     }
 
     public static class Item {

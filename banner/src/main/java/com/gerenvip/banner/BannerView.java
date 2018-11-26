@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Handler;
 import android.os.Looper;
+import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -154,6 +155,14 @@ public abstract class BannerView<T> extends FrameLayout implements Runnable {
         });
     }
 
+    public ViewPager getViewPager() {
+        return mViewPager;
+    }
+
+    public void setPageTransformer(@Nullable ViewPager.PageTransformer transformer) {
+        mViewPager.setPageTransformer(false, transformer);
+    }
+
     protected BaseBannerAdapter<T> createBannerAdapter() {
         return new BannerAdapter(getContext(), mViewPager);
     }
@@ -165,7 +174,7 @@ public abstract class BannerView<T> extends FrameLayout implements Runnable {
             nextIndex = mBannerAdapter.getDataSize() - 1;
             mViewPager.setCurrentItem(nextIndex, false);
         } else {
-            mViewPager.setCurrentItem(nextIndex);
+            mViewPager.setCurrentItem(nextIndex, true);
         }
     }
 
