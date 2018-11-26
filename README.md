@@ -4,7 +4,9 @@
 
 Banner 轮播图，实现自动轮播，indicator 指示
 
-# `jecenter` 集成 方式:  
+##### How to Use:  
+
+Use `jecenter`:  
 
 ```groovy
 compile 'com.gerenvip:banner:1.0.1'
