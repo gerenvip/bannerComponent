@@ -7,7 +7,7 @@ android {
     defaultConfig {
         minSdkVersion 10
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.1"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -44,6 +44,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
 //需要打包发布时 取消注释
-apply from: "${rootProject.projectDir}/scripts/bintrayUpload.gradle"
+//apply from: "${rootProject.projectDir}/scripts/bintrayUpload.gradle"
 //publish to nexus
 //apply from: "${rootProject.projectDir}/nexus_scripts/nexusUpload.gradle"

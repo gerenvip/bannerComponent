@@ -1,12 +1,36 @@
 # bannerComponent
-banner 轮播图，实现自动轮播，indicator 指示
 
-#使用示例:
-继承BannerView,实现 getItemView 方法
+[ ![Download](https://api.bintray.com/packages/gerenvip/maven/banner/images/download.svg) ](https://bintray.com/gerenvip/maven/banner/_latestVersion)
 
-code:
+Banner 轮播图，实现自动轮播，indicator 指示
 
-	public class DemoBannerView extends BannerView<DemoBannerView.Item> {
+# `jecenter` 集成 方式:  
+
+```groovy
+compile 'com.gerenvip:banner:1.0.1'
+```
+
+Use jitpack Add in the build directory build.gradle
+
+```groovy
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+
+In app module Add the following dependency
+
+```groovy
+implementation 'com.github.gerenvip:banner:1.0.1'
+```
+# 使用示例:  
+
+继承BannerView,实现 getItemView 方法  
+
+```java
+public class DemoBannerView extends BannerView<DemoBannerView.Item> {
 
     private Context mCxt;
 
@@ -41,6 +65,7 @@ code:
         public int resId;
         public String name;
     }
-	}
+    }
+```
 
 
