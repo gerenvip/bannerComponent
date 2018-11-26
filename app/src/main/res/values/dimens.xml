@@ -1,8 +1,0 @@
-<resources>
-
-    <dimen name="default_pager_indicator_size">6dp</dimen>
-    <dimen name="default_pager_indicator_padding">4dp</dimen>
-
-    <dimen name="default_indicator_height">36dp</dimen>
-
-</resources>

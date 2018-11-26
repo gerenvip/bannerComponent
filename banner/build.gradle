@@ -44,6 +44,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
 //需要打包发布时 取消注释
-//apply from: "${rootProject.projectDir}/scripts/bintrayUpload.gradle"
+apply from: "${rootProject.projectDir}/scripts/bintrayUpload.gradle"
 //publish to nexus
 //apply from: "${rootProject.projectDir}/nexus_scripts/nexusUpload.gradle"
