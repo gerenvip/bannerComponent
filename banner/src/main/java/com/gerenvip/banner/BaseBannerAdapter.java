@@ -76,6 +76,9 @@ public abstract class BaseBannerAdapter<T> extends PagerAdapter implements ViewP
         } else {
             updateView(view, data, dataPosition);
         }
+        if (view.getParent() != null) {
+            ((ViewGroup) view.getParent()).removeView(view);
+        }
         container.addView(view);
         return view;
     }
