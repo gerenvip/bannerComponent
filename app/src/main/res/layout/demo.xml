@@ -8,7 +8,38 @@
     <com.gerenvip.banner.example.DemoBannerView
         android:id="@+id/banner_view"
         android:layout_width="match_parent"
+        android:layout_height="200dp"
         app:customIndicator="false"
-        app:indicatorHeight="48dp"
-        android:layout_height="300dp"/>
+        app:indicatorHeight="48dp" />
+
+    <FrameLayout
+        android:id="@+id/banner_content"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginTop="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="startTimer"
+            android:text="reStart" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="stopTimer"
+            android:text="stop" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="toggle"
+            android:text="toggle" />
+    </LinearLayout>
+
 </LinearLayout>
